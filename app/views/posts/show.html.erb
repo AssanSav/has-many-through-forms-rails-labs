@@ -33,7 +33,7 @@
 <p>
     <%= f.collection_select :user_id, User.all, :id, :username, include_blank: true %>
 </p>
-<%= f.fields_for :user, @post.comments.last.build_user do |user_builder| %>
+<%= f.fields_for :user, User.new do |user_builder| %>
 <p>
     <%= user_builder.label :username %>
     <%= user_builder.text_field :username %>
